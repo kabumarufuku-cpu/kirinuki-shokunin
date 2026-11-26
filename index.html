@@ -35,7 +35,7 @@ header a.l{color:var(--ink);text-decoration:none;font-weight:800}
 .hero p{color:var(--sub)}
 .price{font-size:44px;font-weight:900;color:var(--main);line-height:1.2;margin:10px 0 18px}.price small{font-size:15px;color:var(--sub);font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}.chips li{background:rgba(244,194,107,.3);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700;margin:0}
-.note{font-size:13px;color:var(--sub);margin-top:10px}
+.note{white-space:pre-wrap;font-size:13px;color:var(--sub);margin-top:10px}
 section{padding:48px 0;border-top:1px solid var(--line)}h2{font-size:26px;margin:0 0 22px;line-height:1.4}
 .g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}.c h3{margin:0 0 8px;font-size:18px}.c p{margin:0;color:var(--sub);font-size:15px}
@@ -43,7 +43,8 @@ section{padding:48px 0;border-top:1px solid var(--line)}h2{font-size:26px;margin
 table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden}
 th,td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left}th{width:36%;background:rgba(244,194,107,.18)}
 .cta{text-align:center;background:var(--card);border:2px solid var(--main);border-radius:18px;padding:32px 20px}
-textarea{width:100%;min-height:190px;border:1px solid var(--line);border-radius:12px;padding:14px;font:inherit;font-size:14px;background:var(--bg);color:var(--ink)}
+.form{display:grid;gap:14px}.form label{display:grid;gap:6px;font-weight:700;font-size:14px}input,select,textarea{width:100%;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--card);color:var(--ink)}.form textarea{min-height:90px}.form .btn{width:100%}
+textarea{border:1px solid var(--line);border-radius:12px;padding:14px;font:inherit;font-size:14px;background:var(--bg);color:var(--ink)}
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:700}
 footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-top:1px solid var(--line)}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px;text-align:center;z-index:9}
@@ -51,7 +52,7 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 </style>
 </head>
 <body>
-<header><div class="w"><a class="l" href="#top">✂ 動画切り抜き職人</a><a class="btn s" href="https://coconala.com/services/4534686" rel="noopener">ココナラで相談</a></div></header>
+<header><div class="w"><a class="l" href="#top">✂ 動画切り抜き職人</a><a class="btn s" href="#order">問い合わせ</a></div></header>
 <main id="top">
 <div class="w hero">
 <div>
@@ -60,7 +61,7 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 <p>配信アーカイブ、YouTube、セミナー動画など最大40分の長編から、見てほしい場面を選んで縦型ショートに編集します。見どころの選び方からお任せでOKです。</p>
 <ul class="chips"><li>字幕・BGM込み</li><li>納期1〜3日</li><li>修正2回まで無料</li></ul>
 <div class="price">3,000円<small> / 3本（追加1本 1,000円）</small></div>
-<a class="btn" href="https://coconala.com/services/4534686" rel="noopener">ココナラで気軽に相談する</a>
+<a class="btn" href="#order">フォームで問い合わせる</a>
 <p class="note">相談だけでもOK。やり取りと支払いはココナラ内で行います。</p>
 </div>
 </div>
@@ -104,19 +105,18 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 <div class="c"><div class="n">4</div><h3>修正</h3><p>2回まで無料で調整します。</p></div>
 </div></div></section>
 
-<section id="order"><div class="w"><h2>問い合わせは、ひな形を送るだけ</h2>
-<p>下の文章をコピーして、ココナラのメッセージに貼り付けてください。空欄は分かる範囲で埋めれば十分です。</p>
-<textarea id="tpl" readonly>はじめまして。切り抜きのご相談です。
-・元動画のURL(または受け渡し方法):
-・動画の長さ(40分まで):
-・投稿先(YouTubeショート / TikTok / Instagramなど):
-・希望の長さ(目安15〜60秒)と本数:
-・好みの雰囲気や参考動画があれば:
-・希望納期:
-よろしくお願いします。</textarea>
-<p style="margin:14px 0"><button class="btn o" id="cp" type="button">① ひな形をコピー</button>
-<a class="btn" href="https://coconala.com/services/4534686" rel="noopener">② ココナラで相談する</a></p>
+<section id="order"><div class="w"><h2>かんたん問い合わせフォーム</h2>
+<p>分かる範囲で入力して、ボタンを1回押すだけ。入力内容が文章になってコピーされ、ココナラの画面が開きます。開いたらメッセージ欄に貼り付けて送信してください。</p>
+<form id="f" class="form" onsubmit="return false">
+<label>元動画のURL(または受け渡し方法)<input id="q1" type="text" placeholder="例: https://www.youtube.com/watch?v=..." autocomplete="off"></label>
+<label>動画の長さ(40分まで)<input id="q2" type="text" placeholder="例: 30分" autocomplete="off"></label>
+<label>投稿先<select id="q3"><option>YouTubeショート</option><option>TikTok</option><option>Instagramリール</option><option>複数</option><option>未定</option></select></label>
+<label>本数<select id="q4"><option>3本</option><option>4本</option><option>5本</option><option>6本以上</option><option>相談したい</option></select></label>
+<label>希望納期<select id="q5"><option>急ぎではない</option><option>1日</option><option>2日</option><option>3日</option><option>相談したい</option></select></label>
+<label>好みの雰囲気・要望(任意)<textarea id="q6" placeholder="例: テンポ重視で、字幕は大きめに"></textarea></label>
+<button class="btn" id="go" type="button">コピーしてココナラで送る</button>
 <p class="note" id="st" role="status"></p>
+</form>
 <p class="note">編集・投稿の許可がある素材をご用意ください。ご連絡・納品・お支払いはすべてココナラ内で行います。</p>
 </div></section>
 
@@ -130,16 +130,19 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 
 <section><div class="w"><div class="cta"><h2 style="margin-bottom:10px">まずは3本から、気軽にどうぞ</h2>
 <p style="color:var(--sub)">3本3,000円・字幕BGM込み・納期1〜3日</p>
-<a class="btn" href="https://coconala.com/services/4534686" rel="noopener">ココナラで気軽に相談する</a></div></div></section>
+<a class="btn" href="#order">フォームで問い合わせる</a></div></div></section>
 </main>
 <footer><div class="w">© アップメンテナンス ／ 動画切り抜き職人</div></footer>
-<div class="sticky"><a class="btn" href="https://coconala.com/services/4534686" rel="noopener">ココナラで気軽に相談する(3本3,000円)</a></div>
+<div class="sticky"><a class="btn" href="#order">問い合わせる(3本3,000円)</a></div>
 <script>
-document.getElementById('cp').addEventListener('click',function(){
- var t=document.getElementById('tpl'),st=document.getElementById('st');
- function ok(){st.textContent='コピーしました。ココナラのメッセージに貼り付けてください。'}
- function ng(){t.select();st.textContent='選択しました。コピー(Ctrl/⌘+C)してお使いください。'}
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(ok,ng)}else{ng()}
+document.getElementById('go').addEventListener('click',function(){
+ var v=function(i){return document.getElementById(i).value.trim()||'未記入'};
+ var t='はじめまして。切り抜きのご相談です。\n'
+  +'・元動画: '+v('q1')+'\n・動画の長さ: '+v('q2')+'\n・投稿先: '+v('q3')+'\n・本数: '+v('q4')+'\n・希望納期: '+v('q5')+'\n・要望: '+v('q6')+'\nよろしくお願いします。';
+ var st=document.getElementById('st');
+ var open=function(){window.open('https://coconala.com/services/4534686','_blank','noopener')};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){st.textContent='コピーしました。ココナラの画面で、メッセージ欄に貼り付けて送信してください。';open()},function(){st.textContent='コピーできませんでした。下の文章を手動でコピーしてください。\n\n'+t;open()})}
+ else{st.textContent='コピーできませんでした。下の文章を手動でコピーしてください。\n\n'+t;open()}
 });
 </script>
 </body></html>
