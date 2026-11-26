@@ -30,7 +30,7 @@ header .w{display:flex;justify-content:space-between;align-items:center;height:5
 header a.l{color:var(--ink);text-decoration:none;font-weight:800}
 .btn{display:inline-block;background:var(--main);color:#fff;padding:16px 30px;border-radius:999px;text-decoration:none;font-weight:800;font-size:17px;border:0;cursor:pointer;font-family:inherit;box-shadow:0 6px 18px rgba(179,38,46,.3)}
 .btn.s{padding:9px 18px;font-size:14px;box-shadow:none}.btn.o{background:transparent;color:var(--main);border:2px solid var(--main);box-shadow:none}
-.hero{padding:44px 20px 40px;display:grid;gap:28px;}
+.hero{padding:44px 20px 40px;display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center}.hero img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
 .tag{font-weight:800;color:var(--main);margin:0}.hero h1{font-size:clamp(28px,6vw,44px);line-height:1.3;margin:6px 0 14px}
 .hero p{color:var(--sub)}
 .price{font-size:44px;font-weight:900;color:var(--main);line-height:1.2;margin:10px 0 18px}.price small{font-size:15px;color:var(--sub);font-weight:500}
@@ -49,6 +49,20 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-top:1px solid var(--line)}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px;text-align:center;z-index:9}
 .sticky .btn{width:100%;max-width:520px;padding:14px}
+
+#cb{position:fixed;right:14px;bottom:84px;z-index:20;background:#fff;color:var(--main);border:2px solid var(--main);border-radius:999px;padding:10px 16px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);font-family:inherit}
+#cp2{position:fixed;right:14px;bottom:84px;z-index:21;width:min(360px,calc(100vw - 28px));height:min(520px,calc(100vh - 110px));background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 34px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden}
+#cp2.on{display:flex}#ch{background:var(--main);color:#fff;padding:12px 14px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+#ch button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+#cm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.m.b{background:rgba(244,194,107,.28);align-self:flex-start}.m.u{background:var(--main);color:#fff;align-self:flex-end}
+.m a{color:var(--main);font-weight:700}
+#cq{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-top:1px solid var(--line)}
+#cq button{border:1px solid var(--main);background:transparent;color:var(--main);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;font-family:inherit}
+#cf{display:flex;gap:6px;padding:8px 12px;border-top:1px solid var(--line)}#cf input{flex:1;padding:9px;font-size:16px}
+#cf button{background:var(--main);color:#fff;border:0;border-radius:10px;padding:0 14px;font-weight:700;cursor:pointer;font-family:inherit}
+.cn{font-size:11px;color:var(--sub);padding:0 12px 8px}
 </style>
 </head>
 <body>
@@ -64,6 +78,7 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 <a class="btn" href="#order">フォームで問い合わせる</a>
 <p class="note">相談だけでもOK。やり取りと支払いはココナラ内で行います。</p>
 </div>
+<img src="hero.png" alt="長編動画から見どころを選び、縦型ショート3本に編集するイメージ。3本3,000円" width="1200" height="900">
 </div>
 
 <section><div class="w"><h2>こんなお悩みはありませんか?</h2>
@@ -134,6 +149,15 @@ footer{padding:32px 0;color:var(--sub);font-size:13px;text-align:center;border-t
 </main>
 <footer><div class="w">© アップメンテナンス ／ 動画切り抜き職人</div></footer>
 <div class="sticky"><a class="btn" href="#order">問い合わせる(3本3,000円)</a></div>
+
+<button id="cb" type="button">💬 質問する</button>
+<div id="cp2" role="dialog" aria-label="自動応答チャット">
+<div id="ch"><span>✂ 切り抜き職人 自動案内</span><button id="cx" type="button" aria-label="閉じる">×</button></div>
+<div id="cm"></div>
+<div id="cq"></div>
+<form id="cf"><input id="ci" type="text" placeholder="質問を入力(例: 料金は?)" autocomplete="off"><button type="submit">送信</button></form>
+<div class="cn">※AIではなく、よくある質問に自動で答える案内です。</div>
+</div>
 <script>
 document.getElementById('go').addEventListener('click',function(){
  var v=function(i){return document.getElementById(i).value.trim()||'未記入'};
@@ -144,5 +168,31 @@ document.getElementById('go').addEventListener('click',function(){
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){st.textContent='コピーしました。ココナラの画面で、メッセージ欄に貼り付けて送信してください。';open()},function(){st.textContent='コピーできませんでした。下の文章を手動でコピーしてください。\n\n'+t;open()})}
  else{st.textContent='コピーできませんでした。下の文章を手動でコピーしてください。\n\n'+t;open()}
 });
+
+(function(){
+var U='https://coconala.com/services/4534686';
+var KB=[
+{k:['料金','値段','いくら','価格','円','安い'],a:'料金は3本で3,000円です(1本あたり1,000円)。4本目以降は1本ごとに1,000円で追加できます。字幕・BGMは料金に含まれます。'},
+{k:['納期','何日','いつ','早','期間'],a:'納期の目安は1〜3日です。本数や元動画の長さによって前後するので、急ぎの場合は相談時にお知らせください。'},
+{k:['修正','直し','やり直'],a:'修正は2回まで無料です。納品後に気になる点があれば、ココナラのメッセージでお知らせください。'},
+{k:['長さ','分','時間','長編','何分'],a:'元動画は長編40分まで対応しています。完成する縦型ショートの長さは、15〜60秒が目安です。'},
+{k:['字幕','テロップ','bgm','音楽'],a:'字幕(テロップ)とBGMは料金に含まれます。ご指定があれば、できる範囲で柔軟に対応します。'},
+{k:['見どころ','選','お任せ','丸投げ','どこ'],a:'見どころの選定からお任せいただけます。「ここを使いたい」という指定にも柔軟に対応します。'},
+{k:['ジャンル','vtuber','ゲーム','配信','セミナー','対応'],a:'ゲーム実況・配信、雑談・コラボ、セミナー・解説動画など、ジャンルを問わず対応します。編集・投稿の許可がある素材をご用意ください。'},
+{k:['依頼','頼み','申し込','注文','支払','相談','連絡','メール','line','ライン'],a:'ご依頼・連絡・お支払いはすべてココナラ内で行います。ページ中ほどの問い合わせフォームに入力すると、メッセージ文を自動で作れます。'}
+];
+var DEF='すみません、うまく答えられませんでした。下の質問ボタンを試すか、ココナラのメッセージで直接ご相談ください。';
+var cm=document.getElementById('cm'),cq=document.getElementById('cq'),pn=document.getElementById('cp2'),cb=document.getElementById('cb');
+function add(t,c,h){var d=document.createElement('div');d.className='m '+c;if(h){d.innerHTML=t}else{d.textContent=t}cm.appendChild(d);cm.scrollTop=cm.scrollHeight}
+function link(){return '<br><a href="#order" id="gofm">問い合わせフォームへ</a> / <a href="'+U+'" target="_blank" rel="noopener">ココナラで相談</a>'}
+function ans(q){var l=q.toLowerCase();for(var i=0;i<KB.length;i++){for(var j=0;j<KB[i].k.length;j++){if(l.indexOf(KB[i].k[j])>-1){return KB[i].a}}}return null}
+function ask(q){add(q,'u');var a=ans(q);setTimeout(function(){var m=document.createElement('div');m.className='m b';m.textContent=a||DEF;m.insertAdjacentHTML('beforeend','\n');var lk=document.createElement('span');lk.innerHTML=link().replace('<br>','');m.appendChild(lk);cm.appendChild(m);cm.scrollTop=cm.scrollHeight;var g=m.querySelector('#gofm');if(g){g.removeAttribute('id');g.addEventListener('click',function(){pn.classList.remove('on');cb.style.display=''})}},300)}
+var Q=['料金は?','納期は?','修正は何回?','何分まで?','字幕・BGMは?','見どころ選びは?','依頼の方法は?'];
+Q.forEach(function(q){var b=document.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',function(){ask(q)});cq.appendChild(b)});
+function open(){pn.classList.add('on');cb.style.display='none';if(!cm.children.length){add('こんにちは。動画切り抜きについて、よくある質問にお答えします。下のボタンか、入力欄からどうぞ。','b')}}
+cb.addEventListener('click',open);
+document.getElementById('cx').addEventListener('click',function(){pn.classList.remove('on');cb.style.display=''});
+document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('ci'),v=i.value.trim();if(v){ask(v);i.value=''}});
+})();
 </script>
 </body></html>
