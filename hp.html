@@ -1,0 +1,252 @@
+<title>NOVA Dynamics</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Yomogi&display=swap">
+<style>
+/* concept: 深い夜色の宇宙に、細い光の線と大きな数字。余白で語る大手企業サイト。 */
+:root{--bg:#05070d;--bg2:#0b1020;--ink:#eaf0ff;--mute:#8b97b5;--cy:#4de1ff;--vi:#8b6bff;--line:rgba(140,170,255,.16);
+--disp:'Space Grotesk','Noto Sans JP',sans-serif;--hand:'Yomogi',cursive;--sans:'Noto Sans JP','Hiragino Sans',sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;font-weight:300;overflow-x:hidden}
+.w{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:500;margin:0;line-height:1.25;text-wrap:balance}
+.lbl{font-family:var(--disp);font-size:13px;letter-spacing:.3em;color:var(--cy);text-transform:uppercase}
+/* header */
+header{position:fixed;left:0;right:0;top:0;z-index:30;background:linear-gradient(180deg,rgba(5,7,13,.85),rgba(5,7,13,0));backdrop-filter:blur(6px);padding-top:env(safe-area-inset-top,0px)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:var(--disp);font-weight:700;letter-spacing:.28em;font-size:18px;display:flex;align-items:center;gap:12px}
+.brand i{width:22px;height:22px;border-radius:50%;background:conic-gradient(from 0deg,var(--cy),var(--vi),var(--cy));box-shadow:0 0 18px var(--cy);display:block}
+nav{display:flex;gap:34px;font-family:var(--disp);font-size:13px;letter-spacing:.14em}
+nav a{color:var(--mute);transition:color .2s}nav a:hover{color:var(--cy)}
+.cta-s{border:1px solid var(--cy);color:var(--cy);padding:9px 22px;border-radius:40px;font-family:var(--disp);font-size:13px;letter-spacing:.12em;transition:.2s}
+.cta-s:hover{background:var(--cy);color:#00131a}
+/* hero */
+.hero{position:relative;min-height:820px;background:#04060c;display:flex;align-items:center;overflow:hidden;padding-top:calc(90px + env(safe-area-inset-top,0px));margin-top:0}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.o1{width:520px;height:520px;background:#2a5bff;right:-120px;top:60px;animation:fl 14s ease-in-out infinite}
+.o2{width:420px;height:420px;background:#7a3bff;left:-140px;bottom:-80px;animation:fl 18s ease-in-out infinite reverse}
+@keyframes fl{50%{transform:translate(30px,-26px)}}
+.hero .w{position:relative;z-index:2;padding-block:60px;width:100%}
+.hero h1{font-size:clamp(40px,8vw,104px);letter-spacing:-.02em;margin:18px 0 26px}
+.hero h1 span{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;color:transparent}
+.hero p{max-width:36em;color:var(--mute);font-size:clamp(15px,1.6vw,18px);margin:0 0 40px}
+.btn{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(90deg,var(--cy),#7aa2ff);color:#00131a;padding:16px 34px;border-radius:50px;font-family:var(--disp);font-weight:500;letter-spacing:.1em;font-size:14px}
+.btn::after{content:"→";transition:transform .25s}.btn:hover::after{transform:translateX(5px)}
+.scroll{position:absolute;left:50%;bottom:26px;z-index:2;font-family:var(--disp);font-size:11px;letter-spacing:.4em;color:var(--mute);writing-mode:vertical-rl;transform:translateX(-50%)}
+.scroll::after{content:"";display:block;width:1px;height:46px;background:linear-gradient(var(--cy),transparent);margin:10px auto 0}
+section{padding-block:120px;position:relative}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:60px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(32px,5vw,60px);margin-top:12px}
+/* mission */
+.mission{background:var(--bg2)}
+.mis{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.mis h2{font-size:clamp(28px,4.4vw,52px);font-weight:500}
+.mis p{color:var(--mute);margin:0 0 20px}
+/* numbers */
+.num-g{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.num{padding:44px 20px;border-right:1px solid var(--line)}
+.num:last-child{border-right:0}
+.num b{display:block;font-family:var(--disp);font-weight:500;font-size:clamp(40px,6vw,76px);line-height:1;background:linear-gradient(180deg,#fff,#7f95c9);-webkit-background-clip:text;color:transparent}
+.num b small{font-size:.38em;margin-left:4px;color:var(--cy);-webkit-text-fill-color:var(--cy)}
+.num span{display:block;margin-top:14px;color:var(--mute);font-size:13px}
+/* business */
+.biz{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bz{position:relative;padding:40px 32px 44px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(160deg,rgba(77,225,255,.06),rgba(139,107,255,.04));overflow:hidden;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .3s,border-color .3s}
+.bz:hover{transform:translateY(-6px);border-color:var(--cy)}
+.bz::before{content:attr(data-n);position:absolute;top:22px;right:28px;font-family:var(--disp);font-size:70px;color:rgba(140,170,255,.12);line-height:1}
+.bz::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid var(--line);top:-80px;left:-80px;box-shadow:0 0 0 30px rgba(140,170,255,.04),0 0 0 62px rgba(140,170,255,.03)}
+.bz h3{font-size:26px;margin-bottom:12px;position:relative}
+.bz p{margin:0 0 18px;color:var(--mute);font-size:14px;position:relative}
+.bz a{font-family:var(--disp);color:var(--cy);font-size:13px;letter-spacing:.14em;position:relative}
+/* news */
+.news{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news li{display:grid;grid-template-columns:120px 110px 1fr 24px;gap:20px;align-items:center;padding:26px 6px;border-bottom:1px solid var(--line);transition:background .2s}
+.news li:hover{background:rgba(77,225,255,.04)}
+.news time{font-family:var(--disp);color:var(--mute);font-size:14px}
+.tag{font-family:var(--disp);font-size:11px;letter-spacing:.14em;border:1px solid var(--line);border-radius:30px;padding:3px 14px;text-align:center;color:var(--cy)}
+.news li::after{content:"↗";color:var(--mute)}
+/* recruit */
+.rec{background:linear-gradient(135deg,#0a1a3d,#1a0f45);overflow:hidden}
+.rec::before{content:"JOIN US";position:absolute;left:-10px;bottom:-40px;font-family:var(--disp);font-weight:700;font-size:clamp(100px,22vw,320px);color:rgba(255,255,255,.04);line-height:1;white-space:nowrap}
+.rec .w{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.rec h2{font-size:clamp(30px,5vw,62px);margin:12px 0 22px}
+.rec p{color:#a9b6d8;margin:0 0 30px}
+/* contact + footer */
+.ct{text-align:center}
+.ct h2{font-size:clamp(30px,5vw,64px);margin:12px 0 30px}
+footer{border-top:1px solid var(--line);padding:50px 0 calc(40px + env(safe-area-inset-bottom,0px));color:var(--mute);font-size:12px}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.reveal{opacity:1;transform:none}
+@media(max-width:860px){
+ nav{display:none}
+ section{padding-block:80px}
+ .mis,.rec .w,.biz{grid-template-columns:1fr}
+ .num-g{grid-template-columns:1fr 1fr}.num:nth-child(2){border-right:0}.num:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .news li{grid-template-columns:1fr auto;gap:8px 14px}.news li p{grid-column:1/-1;margin:0}.news li::after{display:none}
+ .bz{min-height:280px}
+ .scroll{display:none}
+}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}.btn::after,.bz{transition:none}}
+.pt img{display:block;width:100%;height:100%;object-fit:cover}
+.pt{display:block;overflow:hidden;flex:none}
+.hero-bg{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=70) center bottom/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,6,12,.92) 0%,rgba(4,6,12,.62) 45%,rgba(4,6,12,.15) 100%),linear-gradient(180deg,rgba(4,6,12,.5),transparent 25%)}
+.msg{background:linear-gradient(180deg,#0b1020,#10162b)}
+.ms{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center}
+.ms .pt{width:340px;height:420px;border-radius:26px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.ms h2{font-size:clamp(26px,3.6vw,44px);margin:12px 0 24px;font-weight:500}
+.ms p{color:#b4bfdc;margin:0 0 16px}
+.sig{font-family:var(--hand);font-size:30px;color:#fff;margin-top:22px}
+.sig small{display:block;font-family:var(--sans);font-size:12px;color:var(--mute);letter-spacing:.1em}
+.ph2{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:26px}
+.ph2 .pt{height:300px;border-radius:22px}
+.ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pp{border:1px solid var(--line);border-radius:22px;padding:30px;background:rgba(140,170,255,.04)}
+.pp .pt{width:96px;height:96px;border-radius:50%;margin-bottom:18px;box-shadow:0 0 0 3px rgba(77,225,255,.35)}
+.pp q{display:block;quotes:none;font-size:15px;color:#d5def5;line-height:1.9;margin-bottom:16px}
+.pp b{display:block;font-weight:500;font-size:14px}.pp span{font-size:12px;color:var(--mute)}
+.ctp{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 34px;max-width:520px;text-align:left}
+.ctp .pt{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 3px rgba(77,225,255,.4)}
+.ctp p{margin:0;font-family:var(--hand);font-size:17px;line-height:1.8}
+.ctp small{font-family:var(--sans);font-size:12px;color:var(--mute);display:block}
+.rec{background:linear-gradient(90deg,rgba(6,10,26,.92),rgba(6,10,26,.55)),url(https://images.unsplash.com/photo-1596348158371-d3a25ec4dcf4?auto=format&fit=crop&w=1800&q=65) center/cover}
+@media(max-width:860px){.ms{grid-template-columns:1fr;gap:34px}.ms .pt{width:100%;max-width:300px;height:360px}.ppl{grid-template-columns:1fr}.ph2{grid-template-columns:1fr}.ph2 .pt{height:220px}.hero-bg{background-position:60% bottom}}
+</style>
+
+<header><div class="w hd"><a class="brand" href="#top"><i></i>NOVA</a>
+ <nav><a href="#about">ABOUT</a><a href="#biz">BUSINESS</a><a href="#people">PEOPLE</a><a href="#news">NEWS</a><a href="#recruit">RECRUIT</a></nav>
+ <a class="cta-s" href="#contact">CONTACT</a></div></header>
+
+<div id="top" class="hero">
+ <div class="hero-bg" role="img" aria-label="宇宙から見た夜の街明かり"></div><canvas id="cv" aria-hidden="true"></canvas>
+ <div class="w">
+  <div class="lbl">NOVA Dynamics Inc. / Sample Site</div>
+  <h1>技術の先には、<br><span>いつも人がいる。</span></h1>
+  <p>ノヴァ・ダイナミクスは、AI・ロボティクス・エネルギーの技術で、現場で働く人の「困った」を解決する会社です。4,800人の社員が、毎日、誰かの役に立つ仕事をしています。</p>
+  <a class="btn" href="#biz">事業を見る</a>
+ </div>
+ <div class="scroll">SCROLL</div>
+</div>
+
+<section class="mission" id="about"><div class="w mis">
+ <div><div class="lbl">Mission</div><h2 style="margin-top:14px">技術で、<br>人の可能性を広げる。</h2></div>
+ <div>
+  <p>私たちは、複雑な社会課題を、シンプルな仕組みに変えることを目指しています。研究から実装まで一気通貫で取り組み、現場で使われ続ける技術だけを世に出します。</p>
+  <p>国境も業界も越えて、あらゆるパートナーと共に。次の10年の「標準」を、ここから生み出します。</p>
+ </div>
+</div></section>
+
+<section><div class="w">
+ <div class="sec-h"><div><div class="lbl">Numbers</div><h2>数字で見るNOVA</h2></div></div>
+ <div class="num-g">
+  <div class="num"><b data-to="32">0</b><span>展開国・地域</span></div>
+  <div class="num"><b data-to="4800">0</b><span>グループ従業員数</span></div>
+  <div class="num"><b data-to="210">0<small>+</small></b><span>保有特許数</span></div>
+  <div class="num"><b data-to="98">0<small>%</small></b><span>継続導入率</span></div>
+ </div>
+ <p style="color:var(--mute);font-size:12px;margin-top:18px">※ 制作サンプルのため、数値は架空です。</p>
+</div></section>
+
+<section id="biz" style="background:var(--bg2)"><div class="w">
+ <div class="sec-h"><div><div class="lbl">Business</div><h2>3つの事業領域</h2></div></div>
+ <div class="biz">
+  <a class="bz" data-n="01" href="#contact"><h3>AI Solutions</h3><p>製造・物流・金融の現場に、予測と最適化のAIを。導入から運用まで伴走します。</p><span style="font-family:var(--disp);color:var(--cy);font-size:13px;letter-spacing:.14em">VIEW MORE →</span></a>
+  <a class="bz" data-n="02" href="#contact"><h3>Robotics</h3><p>人と協働する自律ロボットで、危険・重労働の現場を安全で持続可能なものに。</p><span style="font-family:var(--disp);color:var(--cy);font-size:13px;letter-spacing:.14em">VIEW MORE →</span></a>
+  <a class="bz" data-n="03" href="#contact"><h3>Clean Energy</h3><p>次世代蓄電とエネルギー管理で、街と産業の脱炭素を後押しします。</p><span style="font-family:var(--disp);color:var(--cy);font-size:13px;letter-spacing:.14em">VIEW MORE →</span></a>
+ </div>
+</div></section>
+
+<section class="msg" id="message"><div class="w ms"><div class="pt"><img src="https://images.unsplash.com/photo-1758600431229-191932ccee81?auto=format&fit=crop&crop=faces&w=680&h=840&q=75" alt="代表取締役" loading="lazy" width="680" height="840"></div>
+<div><div class="lbl">Message</div><h2>数字より先に、目の前の<br>「ひと」を見ています。</h2>
+<p>私たちが創業以来大切にしているのは、技術そのものより、それを使う人の顔を思い浮かべることです。夜勤明けの工場長、荷物を運ぶ配送の方、冬の停電に備える家族。そのひとりひとりが、私たちのお客様です。</p>
+<p>うまくいかないことも、たくさんありました。そのたびに現場へ足を運び、話を聞き、作り直してきました。これからも、そうやって進みます。</p>
+<div class="sig">代表取締役 佐々木 誠一<small>FOUNDER &amp; CEO(写真はサンプルのモデルです)</small></div></div></div></section>
+
+<section id="people"><div class="w"><div class="sec-h"><div><div class="lbl">People</div><h2>一緒に働く、人たち</h2></div></div><div class="ph2"><div class="pt"><img src="https://images.unsplash.com/photo-1710005631062-ae9d1cf080be?auto=format&fit=crop&crop=faces&w=1000&h=600&q=75" alt="東京のオフィス街" loading="lazy" width="1000" height="600"></div><div class="pt"><img src="https://images.unsplash.com/photo-1777274301338-12dfb8462a1f?auto=format&fit=crop&crop=faces&w=700&h=600&q=75" alt="行き交う街の人々" loading="lazy" width="700" height="600"></div></div><div class="ppl"><article class="pp"><div class="pt"><img src="https://images.unsplash.com/photo-1758691737605-69a0e78bd193?auto=format&fit=crop&crop=faces&w=200&h=200&q=75" alt="高橋 美咲" loading="lazy" width="200" height="200"></div><q>現場のお客様に「助かった」と言われた日が、一番うれしい日です。</q><b>高橋 美咲</b><span>AIソリューション部 / 入社6年目</span></article><article class="pp"><div class="pt"><img src="https://images.unsplash.com/photo-1752993148606-8f29644e8de6?auto=format&fit=crop&crop=faces&w=200&h=200&q=75" alt="田中 健太" loading="lazy" width="200" height="200"></div><q>失敗しても、チームの誰かが必ず一緒に原因を探してくれます。</q><b>田中 健太</b><span>ロボティクス開発部 / 入社4年目</span></article><article class="pp"><div class="pt"><img src="https://images.unsplash.com/photo-1754008331179-a363abe9149e?auto=format&fit=crop&crop=faces&w=200&h=200&q=75" alt="中村 翔太" loading="lazy" width="200" height="200"></div><q>子どもの行事に合わせて休めるので、仕事も家庭も大事にできています。</q><b>中村 翔太</b><span>エネルギー事業部 / 入社3年目</span></article></div><p style="color:var(--mute);font-size:12px;margin-top:22px">※ 制作サンプルのため、人物・コメントは架空です。写真はUnsplashのモデル写真で、実在の社員ではありません。実際の制作では、実在の社員の写真と言葉に差し替えます。</p></div></section>
+
+<section id="news"><div class="w">
+ <div class="sec-h"><div><div class="lbl">News</div><h2>ニュース</h2></div><a class="cta-s" href="#news">ALL NEWS</a></div>
+ <ul class="news">
+  <li><time>2026.11.20</time><span class="tag">PRESS</span><p style="margin:0">次世代蓄電システムの量産開始について</p></li>
+  <li><time>2026.11.05</time><span class="tag">AI</span><p style="margin:0">物流向けAI需要予測サービスの提供地域を拡大</p></li>
+  <li><time>2026.10.18</time><span class="tag">IR</span><p style="margin:0">2026年度 第2四半期 決算説明資料を公開しました</p></li>
+  <li><time>2026.10.02</time><span class="tag">EVENT</span><p style="margin:0">国際ロボット展への出展のお知らせ</p></li>
+ </ul>
+</div></section>
+
+<section class="rec" id="recruit"><div class="w">
+ <div><div class="lbl">Recruit</div><h2>次の標準を、<br>一緒につくろう。</h2><p>研究者、エンジニア、デザイナー、事業開発。挑戦する人を、国籍も経歴も問わず歓迎します。</p><a class="btn" href="#contact">採用情報を見る</a></div>
+ <div></div>
+</div></section>
+
+<section class="ct" id="contact"><div class="w">
+ <div class="lbl">Contact</div><h2>まずは、ご相談ください。</h2>
+ <div class="ctp"><div class="pt"><img src="https://images.unsplash.com/photo-1679803155207-3ea7b4a501c5?auto=format&fit=crop&crop=faces&w=168&h=168&q=75" alt="担当者" loading="lazy" width="168" height="168"></div><p>担当の山口が、2営業日以内にお返事します。<small>まずは気軽にご相談ください。</small></p></div><a class="btn" href="#contact">山口に相談する</a>
+</div></section>
+
+<footer><div class="w ft"><div class="brand"><i></i>NOVA Dynamics</div>
+ <div>© NOVA Dynamics Sample. 本ページは制作サンプルです。企業・数値は架空のものです。制作:アップメンテナンス(ココナラ)/ 写真:Unsplash(各撮影者)</div></div></footer>
+
+<script>
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function hash(x,y){var n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)}
+ function vn(x,y){var xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf);return hash(xi,yi)*(1-u)*(1-v)+hash(xi+1,yi)*u*(1-v)+hash(xi,yi+1)*(1-u)*v+hash(xi+1,yi+1)*u*v}
+ function fbm(x,y){var s=0,a=.5;for(var i=0;i<5;i++){s+=a*vn(x,y);x=x*2.03+17;y=y*2.03+9;a*=.5}return s}
+ function ss(a,b,x){x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x)}
+ var c=document.getElementById('cv'),x=c.getContext('2d'),W,H,dpr,S=[],neb,tex,mx=0,my=0,shoot=null,nextShoot=3000;
+ // 星雲(低解像度のノイズを拡大して柔らかく見せる)
+ function makeNebula(){var w=220,h=130,o=document.createElement('canvas');o.width=w;o.height=h;var g=o.getContext('2d'),d=g.createImageData(w,h);
+  for(var j=0;j<h;j++)for(var i=0;i<w;i++){var n=fbm(i*.022,j*.03),m=fbm(i*.018+40,j*.02+9),a=ss(.42,.78,n)*.6*(0.5+0.5*ss(.3,.7,m));
+   var k=(j*w+i)*4,t=ss(.3,.7,m);d.data[k]=Math.round(50+t*190);d.data[k+1]=Math.round(80-t*20);d.data[k+2]=Math.round(255-t*60);d.data[k+3]=Math.round(a*255)}
+  g.putImageData(d,0,0);return o}
+ // 惑星の表面テクスチャ(海と雲)
+ function makeTex(){var w=256,h=128,o=document.createElement('canvas');o.width=w;o.height=h;var g=o.getContext('2d'),d=g.createImageData(w,h);
+  for(var j=0;j<h;j++)for(var i=0;i<w;i++){var f=fbm(i*.035,j*.06+3),cl=ss(.52,.76,fbm(i*.05,j*.09+11)),r=10+f*50,gr=30+f*110,b=80+f*150;
+   r=r+(235-r)*cl;gr=gr+(240-gr)*cl;b=b+(250-b)*cl;var k=(j*w+i)*4;d.data[k]=r;d.data[k+1]=gr;d.data[k+2]=b;d.data[k+3]=255}
+  g.putImageData(d,0,0);return o}
+ function build(){dpr=Math.min(2,devicePixelRatio||1);W=c.offsetWidth;H=c.offsetHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+  var cols=['255,244,232','200,220,255','255,214,170','170,200,255','255,255,255'],n=Math.floor(W*H/2200);S=[];
+  for(var i=0;i<n;i++){var z=Math.random(),big=Math.random()<.025;S.push({x:Math.random()*W,y:Math.random()*H,z:z,r:big?1.6+Math.random()*1.4:.3+Math.pow(Math.random(),3)*1.1+z*.5,tw:Math.random()*6.3,sp:.6+Math.random()*2,c:cols[Math.floor(Math.random()*cols.length)],big:big})}
+  }
+ function planet(t){var R=Math.min(W,H)*(W<700?.5:.58),px=W*(W<700?.84:.85),py=H*1.02+(W<700?0:20);
+  // 大気の光
+  var gl=x.createRadialGradient(px,py,R*.96,px,py,R*1.2);gl.addColorStop(0,'rgba(110,210,255,.55)');gl.addColorStop(.4,'rgba(70,140,255,.18)');gl.addColorStop(1,'rgba(70,140,255,0)');
+  x.fillStyle=gl;x.beginPath();x.arc(px,py,R*1.2,0,6.3);x.fill();
+  x.save();x.beginPath();x.arc(px,py,R,0,6.3);x.clip();
+  var off=((t/1000)*4)%256,tw=R*2*1.6,th=R*2;x.imageSmoothingEnabled=true;
+  var sx=px-R-(off/256)*tw;for(var k=0;k<3;k++)x.drawImage(tex,sx+k*tw,py-R,tw,th);
+  // 昼夜の陰影(左上から光が当たる)
+  var sh=x.createRadialGradient(px-R*.45,py-R*.5,R*.1,px-R*.2,py-R*.25,R*1.35);sh.addColorStop(0,'rgba(0,0,12,0)');sh.addColorStop(.4,'rgba(0,0,12,.3)');sh.addColorStop(.68,'rgba(0,0,14,.82)');sh.addColorStop(1,'rgba(0,0,16,.98)');
+  x.fillStyle=sh;x.fillRect(px-R,py-R,R*2,R*2);
+  // 縁の大気散乱
+  var li=x.createRadialGradient(px,py,R*.84,px,py,R);li.addColorStop(0,'rgba(120,210,255,0)');li.addColorStop(1,'rgba(130,215,255,.55)');
+  x.fillStyle=li;x.fillRect(px-R,py-R,R*2,R*2);x.restore();
+  // 光が当たる縁のハイライト
+  x.save();x.strokeStyle='rgba(190,235,255,.75)';x.lineWidth=1.5;x.beginPath();x.arc(px,py,R,3.5,4.9);x.stroke();x.restore()}
+ function frame(t){
+  x.clearRect(0,0,W,H);
+  // 星(奥行きごとに視差)
+  for(var i=0;i<S.length;i++){var s=S[i],px=s.x+mx*s.z*26+(reduce?0:(t*.004*s.z)),py=s.y+my*s.z*16;px=((px%W)+W)%W;
+   var a=.45+.55*(reduce?1:(.5+.5*Math.sin(t/1000*s.sp+s.tw)));
+   if(s.big){var g=x.createRadialGradient(px,py,0,px,py,s.r*7);g.addColorStop(0,'rgba('+s.c+','+(.55*a)+')');g.addColorStop(1,'rgba('+s.c+',0)');x.fillStyle=g;x.fillRect(px-s.r*7,py-s.r*7,s.r*14,s.r*14);
+    x.strokeStyle='rgba('+s.c+','+(.35*a)+')';x.lineWidth=.8;x.beginPath();x.moveTo(px-s.r*8,py);x.lineTo(px+s.r*8,py);x.moveTo(px,py-s.r*8);x.lineTo(px,py+s.r*8);x.stroke()}
+   x.fillStyle='rgba('+s.c+','+a+')';x.beginPath();x.arc(px,py,s.r,0,6.3);x.fill()}
+  
+  // 流れ星
+  if(!reduce){if(!shoot&&t>nextShoot){shoot={x:W*(.1+Math.random()*.6),y:H*(.05+Math.random()*.3),t:t};nextShoot=t+6000+Math.random()*6000}
+   if(shoot){var p=(t-shoot.t)/900;if(p>1)shoot=null;else{var hx=shoot.x+p*320,hy=shoot.y+p*150,g2=x.createLinearGradient(hx,hy,hx-120,hy-56);g2.addColorStop(0,'rgba(255,255,255,'+(1-p)+')');g2.addColorStop(1,'rgba(255,255,255,0)');x.strokeStyle=g2;x.lineWidth=1.6;x.beginPath();x.moveTo(hx,hy);x.lineTo(hx-120,hy-56);x.stroke()}}}
+  if(!reduce)requestAnimationFrame(frame)}
+ build();requestAnimationFrame(frame);
+ addEventListener('resize',function(){build();if(reduce)frame(0)});
+ addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
+ // 数字のカウントアップ(最終値は常にHTMLに入る)
+ document.querySelectorAll('[data-to]').forEach(function(el){
+  var to=+el.dataset.to;
+  function set(v){el.firstChild.textContent=Math.round(v).toLocaleString()}
+  set(to);if(reduce||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();var s=performance.now();(function f(n){var p=Math.min(1,(n-s)/1400);set(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)}},{threshold:.4}).observe(el)});
+})();
+</script>

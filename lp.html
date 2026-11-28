@@ -1,0 +1,228 @@
+<title>SORA Serum LP</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Yomogi&display=swap">
+<style>
+/* concept: 朝の光を閉じ込めた美容液のLP。淡いパール地、ローズゴールドの差し色、縦に流れる一本導線。 */
+:root{--bg:#fbf7f4;--bg2:#f3e9e4;--ink:#2b2427;--mute:#7a6c70;--rose:#b8737f;--gold:#c9a36a;--deep:#3a2a30;--line:#e6d9d3;--white:#fff;
+--serif:'Shippori Mincho','Hiragino Mincho ProN',serif;--sans:'Noto Sans JP','Hiragino Sans',sans-serif;--en:'Cormorant Garamond',serif;--hand:'Yomogi','Hiragino Maru Gothic ProN',cursive;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;padding-bottom:88px}
+.w{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0;text-wrap:balance;line-height:1.5}
+.en{font-family:var(--en);font-style:italic;letter-spacing:.18em;color:var(--rose);font-size:15px}
+section{padding-block:84px}
+.sec-t{text-align:center;margin-bottom:48px}
+.sec-t h2{font-size:clamp(24px,4.4vw,36px);margin-top:6px}
+.btn{display:inline-block;background:linear-gradient(135deg,#c98a94,#b8737f);color:#fff;text-decoration:none;padding:18px 44px;border-radius:60px;font-weight:700;letter-spacing:.08em;box-shadow:0 14px 30px rgba(184,115,127,.35);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn small{display:block;font-weight:400;font-size:12px;opacity:.9;letter-spacing:.04em}
+/* hero */
+.hero{background:radial-gradient(900px 500px at 78% 30%,#f7dfd8 0%,transparent 60%),linear-gradient(180deg,#fbf7f4,#f3e9e4);margin-top:calc(-1*env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 28px);padding-bottom:70px;overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:40px}
+.logo{font-family:var(--en);font-size:26px;letter-spacing:.3em;color:var(--deep)}
+.nav span{font-size:12px;color:var(--mute);letter-spacing:.1em}
+.hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.badge{display:inline-block;border:1px solid var(--gold);color:#9a7a45;padding:4px 16px;border-radius:30px;font-size:12px;letter-spacing:.12em;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,6vw,54px);letter-spacing:.04em}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 68%,#f0cfc8 68%)}
+.hero p{color:var(--mute);margin:22px 0 32px;max-width:30em}
+.bottle{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center}
+.halo{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#fff 0,#f7dfd8 55%,transparent 72%);animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.07)}}
+.b-body{position:relative;top:-30px;width:128px;height:260px;border-radius:26px 26px 34px 34px;background:linear-gradient(100deg,rgba(255,255,255,.9),rgba(247,223,216,.85) 40%,rgba(201,138,148,.6));box-shadow:0 30px 50px rgba(120,70,80,.25),inset 0 0 0 1px rgba(255,255,255,.8)}
+.b-body::before{content:"";position:absolute;inset:80px 18px 28px;border-radius:12px;background:rgba(255,255,255,.75)}
+.b-body::after{content:"SORA\A SERUM";white-space:pre;position:absolute;left:0;right:0;top:112px;text-align:center;font-family:var(--en);letter-spacing:.3em;font-size:15px;line-height:1.8;color:var(--deep)}
+.b-cap{position:absolute;top:-62px;left:50%;transform:translateX(-50%);width:44px;height:70px;border-radius:10px 10px 4px 4px;background:linear-gradient(90deg,#b9925a,#e6cc9a,#b9925a)}
+.b-drop{position:absolute;top:-92px;left:50%;width:14px;height:26px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#f0cfc8;transform:translateX(-50%)}
+#splash{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.b-body{z-index:2}
+.drops{position:relative;overflow:hidden}
+.f-v.a canvas{position:absolute;inset:0;width:100%;height:100%}
+.note{font-size:12px;color:var(--mute)}
+/* worry */
+.worry{background:var(--white)}
+.chk{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px;max-width:760px;margin:0 auto 36px;padding:0;list-style:none}
+.chk li{padding:16px 18px 16px 52px;position:relative;background:var(--bg);border-radius:14px}
+.chk li::before{content:"";position:absolute;left:18px;top:50%;width:20px;height:20px;transform:translateY(-50%);border:2px solid var(--rose);border-radius:50%;background:radial-gradient(circle,var(--rose) 0 4px,transparent 5px)}
+.arrow{text-align:center;font-family:var(--serif);font-size:22px;color:var(--deep)}
+.arrow b{color:var(--rose)}
+/* features */
+.feat{display:grid;gap:56px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.f:nth-child(even) .f-v{order:2}
+.f-v{aspect-ratio:4/3;border-radius:22px;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:90px;color:rgba(255,255,255,.85);position:relative;overflow:hidden}
+.f-v.a{background:linear-gradient(135deg,#e9b9bd,#c98a94)}
+.f-v.b{background:linear-gradient(135deg,#e5d1ad,#c9a36a)}
+.f-v.c{background:linear-gradient(135deg,#d9c3d8,#a98aa9)}
+.f-v::after{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.6);right:-10%;bottom:-20%;pointer-events:none}
+.f h3{font-size:clamp(20px,3vw,26px);margin:8px 0 14px}
+.f p{margin:0;color:var(--mute)}
+/* numbers */
+.nums{background:var(--deep);color:#fff}
+.nums .en{color:var(--gold)}
+.n-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.n{padding:28px 10px;border-top:1px solid rgba(255,255,255,.2)}
+.n b{display:block;font-family:var(--en);font-size:clamp(46px,8vw,76px);color:#f0cfc8;line-height:1.1;font-weight:500}
+.n b small{font-size:.4em}
+.n span{font-size:13px;opacity:.8}
+.nums .note{color:#bfaeb3;text-align:center;margin-top:22px}
+/* steps */
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.st div{background:var(--white);border-radius:20px;padding:34px 26px;text-align:center;counter-increment:s;border:1px solid var(--line)}
+.st div::before{content:"STEP " counter(s);display:block;font-family:var(--en);color:var(--rose);letter-spacing:.2em;margin-bottom:8px}
+.st h3{font-size:19px;margin-bottom:8px}.st p{margin:0;font-size:14px;color:var(--mute)}
+/* voice */
+.voice{background:var(--bg2)}
+.v-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.v{background:var(--white);border-radius:18px;padding:26px}
+.v .who{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#f0cfc8,#c9a36a)}
+.v .who small{color:var(--mute);display:block;font-size:12px;line-height:1.4}
+.v p{margin:0;font-size:14px}
+.star{color:var(--gold);letter-spacing:3px}
+/* price */
+.price{text-align:center}
+.card{max-width:620px;margin:0 auto;background:var(--white);border-radius:28px;padding:46px 28px;box-shadow:0 30px 60px rgba(120,70,80,.12);border:1px solid var(--line);position:relative}
+.ribbon{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;padding:5px 22px;border-radius:30px;font-size:13px;letter-spacing:.1em}
+.old{color:var(--mute);text-decoration:line-through}
+.pr{font-family:var(--serif);font-size:clamp(46px,9vw,68px);color:var(--rose);line-height:1.2}
+.pr small{font-size:.32em;color:var(--ink)}
+.pts{list-style:none;padding:0;margin:20px 0 30px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:14px}
+.pts li::before{content:"✓ ";color:var(--rose)}
+/* faq */
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:0 22px}
+.faq summary{cursor:pointer;padding:18px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--rose);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:0 0 18px;color:var(--mute);font-size:14px}
+.faq .w{max-width:760px}
+/* final */
+.final{background:linear-gradient(135deg,#d9a1aa,#b8737f);color:#fff;text-align:center}
+.final h2{font-size:clamp(24px,4.6vw,38px);margin-bottom:14px}
+.final .btn{background:#fff;color:var(--rose);box-shadow:0 14px 30px rgba(0,0,0,.18);margin-top:26px}
+footer{padding:36px 0;text-align:center;font-size:12px;color:var(--mute)}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(251,247,244,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:18px;z-index:20}
+.sticky .btn{padding:12px 34px}
+.sticky span{font-size:13px;line-height:1.5}
+@media(max-width:760px){
+ section{padding-block:60px}
+ .hero-g,.f{grid-template-columns:1fr}
+ .f:nth-child(even) .f-v{order:0}
+ .bottle{height:340px;order:-1}.halo{width:280px;height:280px}
+ .chk,.n-g,.st,.v-g{grid-template-columns:1fr}
+ .sticky span{display:none}.sticky .btn{width:100%;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.halo{animation:none}.btn{transition:none}}
+.pt img{display:block;width:100%;height:100%;object-fit:cover}
+.hand{font-family:var(--hand)}
+.pt{display:block;border-radius:50%;overflow:hidden;flex:none}
+.hv{display:flex;align-items:center;gap:14px;margin-top:26px;max-width:30em}
+.hv .pt{width:56px;height:56px;box-shadow:0 0 0 3px #fff,0 6px 14px rgba(120,70,80,.18)}
+.hv p{margin:0;font-family:var(--hand);font-size:15px;line-height:1.7;color:var(--ink)}
+.hv small{display:block;color:var(--mute);font-size:12px}
+.arch{position:relative;width:min(380px,86%);aspect-ratio:3/4;border-radius:200px 200px 28px 28px;overflow:hidden;box-shadow:0 40px 70px rgba(120,70,80,.28);background:#dfe9f3}
+.arch img{width:100%;height:100%;object-fit:cover;display:block}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,223,216,.18),transparent 40%,rgba(184,115,127,.18))}
+.tag-f{position:absolute;right:-6px;bottom:30px;background:#fff;border-radius:16px;padding:12px 18px;box-shadow:0 16px 30px rgba(120,70,80,.2);font-size:12px;line-height:1.5;z-index:3}
+.tag-f b{display:block;font-family:var(--serif);font-size:20px;color:var(--rose)}
+.f-v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.f-v{font-size:0}
+.stories{display:grid;gap:22px;max-width:860px;margin:0 auto}
+.story{display:grid;grid-template-columns:120px 1fr;gap:26px;background:var(--white);border-radius:22px;padding:28px;align-items:start;box-shadow:0 14px 34px rgba(120,70,80,.08)}
+.story .pt{width:120px;height:120px}
+.story h3{font-size:18px;margin-bottom:8px;color:var(--deep)}
+.story p{margin:0;font-size:14.5px;color:#5b4d52}
+.story .meta{margin-top:12px;font-size:12px;color:var(--mute)}
+.story .q{font-family:var(--hand);font-size:19px;color:var(--rose);margin-bottom:6px;line-height:1.6}
+.founder{background:linear-gradient(180deg,#fff,#fbf1ed)}
+.fd{display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:center;max-width:900px;margin:0 auto}
+.fd .pt{width:280px;height:340px;border-radius:28px;box-shadow:0 24px 50px rgba(120,70,80,.18)}
+.fd p{margin:0 0 14px;color:#5b4d52}
+.sig{font-family:var(--hand);font-size:26px;color:var(--deep);margin-top:6px}
+.sig small{font-family:var(--sans);font-size:12px;color:var(--mute);display:block}
+@media(max-width:760px){.story{grid-template-columns:84px 1fr;gap:16px;padding:20px}.story .pt{width:84px;height:84px}.fd{grid-template-columns:1fr;gap:26px}.fd .pt{width:220px;height:260px}.arch{width:min(300px,80%)}.tag-f{right:0}}
+</style>
+
+<header class="hero"><div class="w">
+ <div class="nav"><div class="logo">SORA</div><span>SAMPLE LP / 架空の商品です</span></div>
+ <div class="hero-g">
+  <div>
+   <div class="badge">累計販売 12万本突破</div>
+   <h1>朝の鏡が、<br><em>少し好きになる</em>。</h1>
+   <p>ゆらぎやすい大人の肌のために。うるおいをためこむ「ひかり美容液」が、乾燥でくすんだ印象をととのえます。</p>
+   <a class="btn" href="#price">初回限定 通常価格より30%OFFで試す<small>定期縛りなし・いつでも休止OK</small></a>
+   <div class="hv"><div class="pt"><img src="https://images.unsplash.com/photo-1583198646737-517b9e660698?auto=format&fit=crop&crop=faces&w=112&h=112&q=75" alt="笑顔の女性" loading="lazy" width="112" height="112"></div><p>「毎朝の鏡が、ちょっと楽しみになりました」<small>35歳・会社員 Mさん(使用3か月)</small></p></div>
+  </div>
+  <div class="bottle"><div class="arch"><img src="https://images.unsplash.com/photo-1763986668655-413d55a24f6a?auto=format&fit=crop&w=900&q=75" alt="ガラスのスポイト瓶の美容液" width="900" height="1200"></div><div class="tag-f">朝晩2プッシュ<b>約1か月分</b></div></div>
+ </div>
+</div></header>
+
+<section class="worry"><div class="w">
+ <div class="sec-t"><div class="en">Worry</div><h2>こんなお悩み、ありませんか?</h2></div>
+ <ul class="chk"><li>夕方になると、肌がつっぱる</li><li>化粧水をつけても、すぐ乾く</li><li>メイクのノリが日によって違う</li><li>顔色がどんよりして見える</li></ul>
+ <div class="arrow">その乾燥は、<b>うるおいが逃げる</b>サインかもしれません。</div>
+</div></section>
+
+<section><div class="w">
+ <div class="sec-t"><div class="en">Features</div><h2>SORAが選ばれる3つの理由</h2></div>
+ <div class="feat">
+  <div class="f"><div class="f-v a"><img src="https://images.unsplash.com/photo-1589295926521-49b366c49767?auto=format&fit=crop&w=900&q=70" alt="はじける水しぶき" loading="lazy">01</div><div><div class="en">Moisture</div><h3>角層のすみずみまで、うるおいを抱え込む</h3><p>3種のヒアルロン酸と、米由来の保湿成分を配合。つけた直後のうるおいが、翌朝まで続く使い心地をめざしました。</p></div></div>
+  <div class="f"><div class="f-v b"><img src="https://images.unsplash.com/photo-1556010656-e60700d4c0d5?auto=format&fit=crop&w=900&q=70" alt="水面に落ちるしずく" loading="lazy">02</div><div><div class="en">Glow</div><h3>光をまとったような、なめらかな肌印象へ</h3><p>微細なパール成分が肌の凹凸をやさしくカバー。ファンデーション前の下地としても使えます。</p></div></div>
+  <div class="f"><div class="f-v c"><img src="https://images.unsplash.com/photo-1602312771175-0a4f1f0f6214?auto=format&fit=crop&w=900&q=70" alt="ラベンダーとスキンケア" loading="lazy">03</div><div><div class="en">Gentle</div><h3>毎日使えるシンプル処方</h3><p>無香料・無着色・アルコールフリー。パッチテスト済み(すべての方にアレルギーが起きないわけではありません)。</p></div></div>
+ </div>
+</div></section>
+
+<section class="nums"><div class="w">
+ <div class="sec-t"><div class="en">Voice in Numbers</div><h2>数字で見る、使い心地</h2></div>
+ <div class="n-g">
+  <div class="n"><b>94<small>%</small></b><span>「うるおいを感じた」と回答</span></div>
+  <div class="n"><b>4.7<small>/5</small></b><span>購入者レビュー平均</span></div>
+  <div class="n"><b>82<small>%</small></b><span>リピート購入率</span></div>
+ </div>
+ <p class="note">※ サンプルLPのため数値は架空です。実際の制作では、根拠のある調査結果に差し替えます。</p>
+</div></section>
+
+<section><div class="w">
+ <div class="sec-t"><div class="en">How to use</div><h2>使い方はかんたん3ステップ</h2></div>
+ <div class="st">
+  <div><h3>洗顔後に化粧水</h3><p>いつものお手入れで肌をととのえます。</p></div>
+  <div><h3>SORAを2プッシュ</h3><p>手のひらで温め、顔全体にやさしくなじませます。</p></div>
+  <div><h3>乳液・クリームで蓋</h3><p>うるおいを閉じ込めて完了です。朝晩どちらもOK。</p></div>
+ </div>
+</div></section>
+
+<section class="voice"><div class="w"><div class="sec-t"><div class="en">Voice</div><h2>使ってくださっている方の、リアルな声</h2></div><div class="stories"><article class="story"><div class="pt"><img src="https://images.unsplash.com/photo-1790574340486-1ea958f106aa?auto=format&fit=crop&crop=faces&w=240&h=240&q=75" alt="お客様の写真" loading="lazy" width="240" height="240"></div><div><div class="q">「帰りの電車で、ふと頬に手をやる癖がなくなりました」</div><h3>夕方のつっぱり感を、気にしなくなりました</h3><p>デスクワークで一日中エアコンの中。夕方になると口まわりが乾いて、メイク直しが憂うつでした。使い始めて2週間ほどで、夕方のつっぱりが気にならなくなり、朝のメイクのノリも変わりました。</p><div class="meta">30代・会社員 / 乾燥肌 / 使用3か月</div></div></article><article class="story"><div class="pt"><img src="https://images.unsplash.com/photo-1600481176431-47ad2ab2745d?auto=format&fit=crop&crop=faces&w=240&h=240&q=75" alt="お客様の写真" loading="lazy" width="240" height="240"></div><div><div class="q">「家族にも『なんか肌きれいになった?』と言われました」</div><h3>香りがないから、毎日続けられる</h3><p>強い香りが苦手で、化粧品選びにいつも苦労していました。無香料でべたつかないのに、しっとりするところが気に入っています。小さめなので、旅行にも持っていきました。</p><div class="meta">40代・主婦 / 混合肌 / 使用5か月</div></div></article><article class="story"><div class="pt"><img src="https://images.unsplash.com/photo-1698072556956-1a5d2307a7a1?auto=format&fit=crop&crop=faces&w=240&h=240&q=75" alt="お客様の写真" loading="lazy" width="240" height="240"></div><div><div class="q">「男でも使いやすい。気づいたら毎朝の習慣になってます」</div><h3>ひげ剃り後のヒリつきが落ち着きました</h3><p>彼女に勧められて半信半疑で使い始めました。ひげ剃り後のヒリヒリが以前より楽になり、手軽なので続いています。</p><div class="meta">20代・会社員 / 敏感肌寄り / 使用2か月</div></div></article></div><p class="note" style="text-align:center;margin-top:22px">※ 制作サンプルのため、お客様の声は架空です。写真はUnsplashのモデル写真で、実在のお客様ではありません。実際の制作では、掲載許可をいただいた実在のお客様の声と写真に差し替えます。</p></div></section>
+
+<section class="founder"><div class="w"><div class="sec-t"><div class="en">Message</div><h2>つくった人から、あなたへ</h2></div>
+<div class="fd"><div class="pt"><img src="https://images.unsplash.com/photo-1784052263500-955cb4afcf27?auto=format&fit=crop&crop=faces&w=560&h=680&q=75" alt="開発責任者" loading="lazy" width="560" height="680"></div>
+<div><p>私自身、乾燥で朝の鏡を見るのが嫌になった時期がありました。高価なものを重ねるより、毎日続けられて、ちゃんとうるおう1本がほしかったのです。</p>
+<p>成分を絞り、香りもつけず、使い心地を何度も試して、いまの処方にたどりつきました。あなたの朝が、少しやさしくなりますように。</p>
+<div class="sig">開発責任者 木村 あかり<small>美容研究15年・二児の母(写真はサンプルのモデルです)</small></div></div></div></div></section>
+
+<section class="price" id="price"><div class="w">
+ <div class="sec-t"><div class="en">Special Offer</div><h2>はじめての方へ、特別なご案内</h2></div>
+ <div class="card"><div class="ribbon">初回限定 30%OFF</div>
+  <div class="old">通常価格 6,600円(税込)</div>
+  <div class="pr">4,620<small>円(税込)</small></div>
+  <ul class="pts"><li>送料無料</li><li>30日間返金保証</li><li>定期縛りなし</li></ul>
+  <a class="btn" href="#price">今すぐ申し込む<small>最短で明日お届け</small></a>
+ </div>
+</div></section>
+
+<section class="faq"><div class="w">
+ <div class="sec-t"><div class="en">FAQ</div><h2>よくあるご質問</h2></div>
+ <details><summary>敏感肌でも使えますか?</summary><p>無香料・無着色・アルコールフリーです。心配な方は、腕の内側などで事前にお試しください。</p></details>
+ <details><summary>1本でどれくらい使えますか?</summary><p>朝晩2プッシュで、約1か月が目安です。</p></details>
+ <details><summary>定期購入の解約はできますか?</summary><p>次回発送の5日前までのご連絡で、いつでも休止・解約できます。</p></details>
+ <details><summary>肌に合わなかった場合は?</summary><p>30日以内であれば、使いかけでも返金をお受けします。</p></details>
+</div></section>
+
+<section class="final"><div class="w">
+ <h2>うるおう朝を、今日から。</h2>
+ <p>初回限定の特別価格は、この機会だけです。</p>
+ <a class="btn" href="#price">初回30%OFFで試してみる</a>
+</div></section>
+
+<footer><div class="w">© SORA Sample. 本ページは制作サンプルです。商品・企業は架空のものです。<br>制作:アップメンテナンス(ココナラ)<br>写真:Unsplash(各撮影者)</div></footer>
+
+<div class="sticky"><span>初回限定30%OFF<br>送料無料・30日返金保証</span><a class="btn" href="#price">今すぐ試す</a></div>
